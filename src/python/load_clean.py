@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from pathlib import Path
-
+#read csv
 RAW = Path("data/raw")
 INTERIM = Path("data/interim"); INTERIM.mkdir(parents=True, exist_ok=True)
 

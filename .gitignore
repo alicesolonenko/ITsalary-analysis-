@@ -1,19 +1,10 @@
-# macOS
 .DS_Store
-
-# Python
 __pycache__/
 *.pyc
 .venv/
 .env
 .ipynb_checkpoints/
-
-# Stata
 *.log
-
-# Data (не пушим сырые/временные)
 data/raw/
 data/interim/
-
-# Outputs (можно оставить графики/таблицы, если нужно в отчёте)
 
