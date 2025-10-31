@@ -84,3 +84,13 @@ plt.axvline(0, color="black", linewidth=1)
 plt.tight_layout()
 plt.savefig(OUT_FIG / "gender_pay_gap_by_position.png")
 plt.close()
+
+numeric_columns = ["Salary", "Experience (Years)", "log_salary"]
+for col in numeric_columns:
+    plt.figure(figsize=(6,4))
+    df[col].plot(kind="hist", bins=20, edgecolor="white")
+    plt.title(f"Distribution of {col}")
+    plt.xlabel(col); plt.ylabel("Number of employees")
+    plt.tight_layout()
+    plt.savefig(OUT_FIG / f"hist_{col}.png")
+    plt.close()
