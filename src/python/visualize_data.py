@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
@@ -7,6 +8,10 @@ OUT_FIG = Path("outputs/figures"); OUT_FIG.mkdir(parents=True, exist_ok=True)
 
 # read the cleaned employee dataset
 df = pd.read_csv(INTERIM / "employee_clean.csv")
+
+# check if log_salary exists, if running this script standalone
+if "log_salary" not in df.columns and "Salary" in df.columns:
+    df["log_salary"] = np.log(df["Salary"]).astype(float)
 
 #Draw a simple histogram of all salaries-overall salary distribution.
 

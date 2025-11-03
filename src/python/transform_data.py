@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from pathlib import Path
 
 # paths to read the cleaned data and to save summary tables
@@ -7,6 +8,10 @@ PROCESSED = Path("data/processed"); PROCESSED.mkdir(parents=True, exist_ok=True)
 OUT_TAB = Path("outputs/tables"); OUT_TAB.mkdir(parents=True, exist_ok=True)
 
 df = pd.read_csv(INTERIM / "employee_clean.csv")
+# ensure log_salary exists for downstream steps (Salary > 0 ensured in cleaning)
+if "log_salary" not in df.columns:
+    df["log_salary"] = np.log(df["Salary"]).astype(float)
+
 #filtering by roles and then columns for analysis sample 
 core_roles = [
     "Software Engineer", "Web Developer", "Data Analyst",
