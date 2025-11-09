@@ -5,7 +5,7 @@ use "$proc/employee_sample.dta", clear
 collapse (mean) mean_salary = Salary mean_experience = Experience_Years, by(Position)
 order Position mean_salary mean_experience
 
-export delimited using "$tables/stata_summary_by_position.csv", replace encoding("UTF-8")
+export delimited using "$tables/stata_summary_by_position.csv", replace 
 
 
 *2. Summary by position and gender 
@@ -14,7 +14,7 @@ use "$proc/employee_sample.dta", clear
 collapse (mean) mean_salary = Salary, by(Position Gender)
 order Position Gender mean_salary
 
-export delimited using "$tables/stata_summary_by_pos_gender.csv", replace encoding("UTF-8")
+export delimited using "$tables/stata_summary_by_pos_gender.csv", replace 
 
 
 * 3. Plots (to mirror Python) 
