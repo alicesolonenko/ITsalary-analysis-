@@ -47,7 +47,7 @@ plt.savefig(OUT_FIG / "salary_bar_by_position.png")
 plt.close()
 
 
-#Scatter plot: Experience vs Salary- check if more experience is linked with higher pay.
+#Scatter plot: experience vs salary- check if more experience is linked with higher pay.
 
 plt.figure(figsize=(7,4))
 plt.scatter(df["Experience (Years)"], df["Salary"], s=20, color="#3c78d8", alpha=0.7)
